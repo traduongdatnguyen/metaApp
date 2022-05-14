@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 
@@ -34,6 +35,8 @@ public class DienThoaiActivity extends AppCompatActivity {
     String title= "";
     DienThoaiAdapter adapterDT;
     List<SanPhamMoi> sanPhamMoiList;
+    LinearLayoutManager linearLayoutManager;
+    boolean isLoading = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +71,12 @@ public class DienThoaiActivity extends AppCompatActivity {
     private void ActionToolBar() {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         getSupportActionBar().setTitle(title);
 
     }

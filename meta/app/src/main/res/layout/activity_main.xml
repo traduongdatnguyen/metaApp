@@ -22,6 +22,23 @@
             android:background="#A9D3D3D3"
             app:titleTextColor="#228FFD"
             app:title="Meta">
+            <FrameLayout
+                android:id="@+id/framegiohang"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="right"
+                android:layout_width="55dp"
+                android:layout_height="?attr/actionBarSize">
+                <com.nex3z.notificationbadge.NotificationBadge
+                    android:id="@+id/menu_sl"
+                    android:layout_gravity="top|right"
+                    android:layout_width="28dp"
+                    android:layout_height="25dp"/>
+                <ImageView
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/ic_cart_24"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"></ImageView>
+            </FrameLayout>
         </androidx.appcompat.widget.Toolbar>
 
         <ViewFlipper

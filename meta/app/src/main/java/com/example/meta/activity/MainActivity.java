@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -34,6 +35,7 @@ import com.example.meta.retrofit.ApiBanHang;
 import com.example.meta.retrofit.RetrofitClient;
 import com.example.meta.utils.Utils;
 import com.google.android.material.navigation.NavigationView;
+import com.nex3z.notificationbadge.NotificationBadge;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +58,8 @@ public class MainActivity extends AppCompatActivity {
     ApiBanHang apiBanHang;
     List<SanPhamMoi> listSPMoi;
     SanPhamMoiAdapter spAdapter;
-
+    NotificationBadge badge;
+    FrameLayout frameLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
                         case 1:
                             Intent laptap = new Intent(getApplicationContext(),DienThoaiActivity.class);
-                            laptap.putExtra("MaDM",1);
+                            laptap.putExtra("MaDM",2);
                             laptap.putExtra("title", "Laptop");
                             startActivity(laptap);
                             break;
@@ -198,10 +201,40 @@ public class MainActivity extends AppCompatActivity {
         listviewmanhinhchinh = findViewById(R.id.listviewmanhinhchinh);
         navigationView = findViewById(R.id.navigationview);
         drawerLayout = findViewById(R.id.drawerlayout);
+        badge = findViewById(R.id.menu_sl);
+        frameLayout = findViewById(R.id.framegiohang);
         //khoi tao list
         mangloaisp = new ArrayList<>();
         listSPMoi = new ArrayList<>();
+        if(Utils.manggiohang == null){
+            Utils.manggiohang = new ArrayList<>();
+        }else{
+            int tatolItem = 0;
+            for (int i = 0; i < Utils.manggiohang.size() ; i++){
+                tatolItem = tatolItem + Utils.manggiohang.get(i).getSoLuong();
 
+            }
+            badge.setText(String.valueOf(tatolItem));
+        }
+        frameLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent giohang = new Intent(getApplicationContext(),GioHangActivity.class);
+                startActivity(giohang);
+            }
+        });
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        int tatolItem = 0;
+        for (int i = 0; i < Utils.manggiohang.size() ; i++){
+            tatolItem = tatolItem + Utils.manggiohang.get(i).getSoLuong();
+
+        }
+        badge.setText(String.valueOf(tatolItem));
     }
 
     private boolean isConnected(Context context) {

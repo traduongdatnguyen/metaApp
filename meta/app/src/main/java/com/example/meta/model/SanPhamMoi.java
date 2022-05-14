@@ -1,6 +1,8 @@
 package com.example.meta.model;
 
-public class SanPhamMoi {
+import java.io.Serializable;
+
+public class SanPhamMoi implements Serializable {
     int MaSP;
     int MaLSP;
     int MaDM;
@@ -11,8 +13,8 @@ public class SanPhamMoi {
     String MoTa;
     String ThoiGian;
     String LoaiMau1, LoaiMau2, LoaiMau3, LoaiMau4, LoaiMau5;
-
-    String tamp="http://192.168.100.24:8080/meta/public/assets/images/products/";
+//192.168.1.4   192.168.100.24
+    String tamp="http://192.168.1.4:8080/meta/public/assets/images/products/";
     String HinhAnh,TenSanPham;
 
 
@@ -50,7 +52,7 @@ public class SanPhamMoi {
     }
 
     public String getDonGia() {
-        DonGia = "$ "+ DonGia;
+
         return DonGia;
     }
     public void setDonGia(String donGia) {
