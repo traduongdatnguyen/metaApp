@@ -39,7 +39,6 @@ public class LoaiSpAdapter extends BaseAdapter {
     }
     public class ViewHolder{
         TextView textensp;
-        ImageView imhinhanh;
     }
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
@@ -49,14 +48,13 @@ public class LoaiSpAdapter extends BaseAdapter {
            LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
            view = layoutInflater.inflate(R.layout.item_sanpham,null);
            viewHolder.textensp = view.findViewById(R.id.item_tensp);
-           viewHolder.imhinhanh = view.findViewById(R.id.item_image);
            view.setTag(viewHolder);
 
        }else{
            viewHolder = (ViewHolder) view.getTag();
        }
         viewHolder.textensp.setText(array.get(i).getTensanpham());
-        Glide.with(context).load(array.get(i).getHinhanh()).into(viewHolder.imhinhanh);
+
 
         return view;
     }

@@ -24,7 +24,7 @@ import com.nex3z.notificationbadge.NotificationBadge;
 public class ChiTietActivity extends AppCompatActivity {
     TextView TenSP, DonGia, MoTa;
     Button btnthem;
-    ImageView HinhAnh;
+    ImageView HinhAnh, HinhAnh1;
     Spinner spinner;
     Toolbar toolbar;
     SanPhamMoi sanPhamMoi;
@@ -104,6 +104,8 @@ public class ChiTietActivity extends AppCompatActivity {
             + "Pin: " + sanPhamMoi.getPin() +"\n"
         );
         Glide.with(getApplicationContext()).load(sanPhamMoi.getHinhAnh1()).into(HinhAnh);
+        Glide.with(getApplicationContext()).load(sanPhamMoi.getHinhAnh1()).into(HinhAnh1);
+
         Integer[] so = new Integer[]{1,2,3,4,5,6,7,8,9,10};
         ArrayAdapter<Integer> adaptersprin = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,so);
         spinner.setAdapter(adaptersprin);
@@ -117,6 +119,7 @@ public class ChiTietActivity extends AppCompatActivity {
         btnthem = findViewById(R.id.btnthemvaogiohang);
         spinner = findViewById(R.id.spinner);
         HinhAnh = findViewById(R.id.imgchitiet);
+        HinhAnh1 = findViewById(R.id.cthinhanh1);
         toolbar = findViewById(R.id.toobar);
         badge = findViewById(R.id.menu_sl);
         FrameLayout frameLayoutgiohang = findViewById(R.id.framegiohang);

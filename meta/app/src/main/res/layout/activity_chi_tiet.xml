@@ -5,11 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="10dp"
     tools:context=".activity.ChiTietActivity">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toobar"
         app:title="Product details"
         android:background="#86C6C6C6"
+        app:titleTextColor="#228FFD"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
@@ -28,7 +30,6 @@
               android:layout_marginTop="15dp"
               android:src="@drawable/ic_cart_24"
               android:layout_width="35dp"
-
               android:layout_height="35dp"></ImageView>
       </FrameLayout>
     </androidx.appcompat.widget.Toolbar>
@@ -46,16 +47,16 @@
             android:layout_height="match_parent" />
         <LinearLayout
             android:orientation="vertical"
-            android:layout_marginLeft="5dp"
+            android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <TextView
                 android:id="@+id/txttensp"
-                android:textSize="20sp"
-                android:textStyle="bold"
+                android:textSize="15sp"
+                android:fontFamily="@font/manrope_bold"
                 android:gravity="center"
+                android:textColor="#505050"
                 android:text="Tên Sản Phẩm"
-                android:textColor="#373737"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             </TextView>
@@ -68,51 +69,52 @@
                 android:layout_marginTop="5dp"
                 android:text="@string/_200"
                 android:textColor="@android:color/holo_red_light"
-                android:textSize="15sp"
-                android:textStyle="bold"></TextView>
+                android:textSize="13sp"
+                android:fontFamily="@font/manrope_regular">
+
+            </TextView>
 
             <Spinner
                 android:id="@+id/spinner"
-                android:layout_width="178dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:layout_marginStart="15dp"
                 android:background="@drawable/spinner"
                 android:gravity="center" />
 
             <Button
                 android:id="@+id/btnthemvaogiohang"
                 android:layout_width="match_parent"
-                android:layout_height="59dp"
-                android:layout_marginTop="15dp"
-
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:layout_marginEnd="20dp"
                 android:backgroundTint="#228FFD"
+                android:fontFamily="@font/manrope_regular"
                 android:text="@string/add_to_cart"
                 android:textColor="@android:color/white" />
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/layout2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="5dp"
+        android:layout_margin="10dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layout1"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="16dp">
+        app:layout_constraintVertical_bias="0.2"
+        tools:layout_editor_absoluteX="10dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/manrope_bold"
             android:text="Product Information"
             android:textColor="#505050"
-            android:textSize="15sp"
-            android:textStyle="bold"></TextView>
+            android:textSize="15sp"></TextView>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -122,11 +124,20 @@
                 android:id="@+id/txtmotachitiet"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:textColor="#6E6E6E"
-                android:textStyle="bold"></TextView>
+                android:layout_margin="10dp"
+                android:fontFamily="@font/manrope_regular"
+                android:textColor="#505050"
+                android:textSize="14sp">
+
+            </TextView>
+
+
         </ScrollView>
+
+        <ImageView
+            android:id="@+id/cthinhanh1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 

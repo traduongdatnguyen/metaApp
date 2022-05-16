@@ -22,7 +22,7 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class DangNhapActivity extends AppCompatActivity {
-    TextView txtdangki;
+    TextView txtdangki,txtresetpass;
     EditText username, password;
     AppCompatButton btndangnhap;
     ApiBanHang apiBanHang;
@@ -46,6 +46,13 @@ public class DangNhapActivity extends AppCompatActivity {
             }
         });
 
+        txtresetpass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),ResetPassActivity.class);
+                startActivity(intent);
+            }
+        });
         btndangnhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,6 +101,7 @@ public class DangNhapActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         btndangnhap = findViewById(R.id.btndangnhap);
         txtdangki = findViewById(R.id.txtdangki);
+        txtresetpass = findViewById(R.id.txtresetpass);
 
         //read data
         if(Paper.book().read("username") != null && Paper.book().read("password") != null){

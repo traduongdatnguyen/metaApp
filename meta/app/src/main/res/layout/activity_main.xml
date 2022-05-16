@@ -18,8 +18,10 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toobarmanhinhchinh"
             android:layout_width="match_parent"
+            android:fontFamily="@font/manrope_bold"
             android:layout_height="?attr/actionBarSize"
             android:background="#A9D3D3D3"
+            android:scrollbarSize="15sp"
             app:titleTextColor="#228FFD"
             app:title="Meta">
             <FrameLayout
@@ -54,22 +56,53 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="387dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_margin="10dp"
                 android:text="Recommendation For You"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="15sp"
+                android:background="@null"
+                android:ellipsize="end"
+                android:id="@+id/Recommendation"
+                android:fontFamily="@font/manrope_bold"
+                android:maxLines="1"
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycleview"
-                android:layout_width="398dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10.00dp"
+                android:fontFamily="@font/manrope_regular"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Recommendation"
+                app:layout_constraintEnd_toEndOf="parent">
 
             </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Điện thoại mới nhất"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:background="@null"
+                android:ellipsize="end"
+                android:id="@+id/dienthoaimoinhat"
+                android:fontFamily="@font/manrope_bold"
+                android:maxLines="1"
+                android:textStyle="bold" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleview2"
+                android:layout_margin="10.00dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dienthoaimoinhat"
+                android:fontFamily="@font/manrope_regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
     </LinearLayout>

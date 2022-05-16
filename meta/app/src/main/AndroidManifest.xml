@@ -14,6 +14,12 @@
         android:theme="@style/Theme.Meta"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activity.ThanhToanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ResetPassActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.DangNhapActivity"
             android:exported="true">
             <intent-filter>
@@ -36,9 +42,7 @@
             android:exported="false" />
         <activity
             android:name=".activity.MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>

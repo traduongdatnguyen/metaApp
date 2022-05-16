@@ -31,7 +31,7 @@ public class SanPhamMoiAdapter extends RecyclerView.Adapter<SanPhamMoiAdapter.My
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-View item = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_sp_moi,parent,false);
+        View item = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_sp_moi,parent,false);
         return new MyViewHolder(item);
     }
 

@@ -71,6 +71,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <LinearLayout
+        android:id="@+id/layout6"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -96,5 +97,18 @@
             android:layout_height="wrap_content">
 
         </TextView>
+
     </LinearLayout>
+    <TextView
+        android:id="@+id/txtresetpass"
+        app:layout_constraintTop_toBottomOf="@+id/layout6"
+        android:layout_marginTop="15dp"
+        android:textColor="#228FFD"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:text="Quên mất khẩu?"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
 </androidx.constraintlayout.widget.ConstraintLayout>
