@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.OrderCompleteActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toobar"
+        app:title="My Purchase "
+        android:background="#86C6C6C6"
+        app:titleTextColor="#228FFD"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+        <FrameLayout
+            android:id="@+id/framemyusser"
+            android:layout_gravity="right"
+            android:layout_width="55dp"
+            android:layout_height="?attr/actionBarSize">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/baseline_account_circle_24"></ImageView>
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/framegiohang"
+            android:layout_gravity="right"
+            android:layout_width="55dp"
+            android:layout_height="?attr/actionBarSize">
+            <com.nex3z.notificationbadge.NotificationBadge
+                android:id="@+id/menu_sl"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_gravity="top|right"
+                />
+
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/ic_cart_24"
+                android:layout_width="30dp"
+                android:layout_height="30dp"></ImageView>
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/framewwishlist"
+            android:layout_marginRight="3dp"
+            android:layout_gravity="right"
+            android:layout_width="55dp"
+            android:layout_height="?attr/actionBarSize">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+
+                android:layout_gravity="center"
+                android:src="@drawable/ic_love"></ImageView>
+        </FrameLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toobar">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <TextView
+                        android:id="@+id/thongbaotrangthai"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/abhaya_libre"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/texttile"
+                        android:textSize="16sp" />
+
+                   <androidx.recyclerview.widget.RecyclerView
+                       android:id="@+id/listdonhangdadat"
+                       android:layout_margin="10dp"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"/>
+
+                    <Button
+                        android:id="@+id/btndeletedonhang"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
+                        android:backgroundTint="#00F4F4F4"
+                        android:elevation="3dp"
+                        android:fontFamily="@font/abhaya_libre"
+                        android:paddingStart="20dp"
+                        android:text="Hủy Đơn "
+                        android:textColor="#505050" />
+
+
+
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

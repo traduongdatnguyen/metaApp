@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.EditHoSoActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toobar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#86C6C6C6"
+        app:title=" "
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:fontFamily="@font/abhaya_libre"
+            android:textStyle="bold"
+            android:textSize="21sp"
+            android:textColor="#228FFD"
+            android:layout_gravity="center"
+            android:id="@+id/toolbar_title" />
+        <FrameLayout
+            android:id="@+id/framemyusser"
+            android:layout_width="100dp"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="right">
+
+            <TextView
+                android:layout_width="87dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/abhaya_libre"
+                android:gravity="right"
+                android:paddingRight="10dp"
+                android:text="Lưu"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_margin="10dp"
+        android:id="@+id/text1"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:layout_constraintTop_toBottomOf="@id/toobar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edithientai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/baseline_account_circle_18"
+            android:fontFamily="@font/abhaya_libre"
+            android:textStyle="bold"
+            android:drawablePadding="5dp"
+            android:hint=" Chỉnh sửa * "
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="14sp"></com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

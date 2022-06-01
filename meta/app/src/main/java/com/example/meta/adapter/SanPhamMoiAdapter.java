@@ -16,6 +16,7 @@ import com.example.meta.Interface.ItemClickListener;
 import com.example.meta.R;
 import com.example.meta.activity.ChiTietActivity;
 import com.example.meta.model.SanPhamMoi;
+import com.example.meta.utils.Utils;
 
 import java.util.List;
 
@@ -41,7 +42,7 @@ public class SanPhamMoiAdapter extends RecyclerView.Adapter<SanPhamMoiAdapter.My
         SanPhamMoi sanPhamMoi = array.get(position);
         holder.txtten.setText(sanPhamMoi.getTenSP());
         holder.txtgia.setText("$ "+ sanPhamMoi.getDonGia());
-        Glide.with(context).load(sanPhamMoi.getHinhAnh1()).into(holder.imghinhanh);
+        Glide.with(context).load(Utils.URL_IMAGE + sanPhamMoi.getHinhAnh1()).into(holder.imghinhanh);
         holder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onClick(View view, int pos, boolean isLongClick) {

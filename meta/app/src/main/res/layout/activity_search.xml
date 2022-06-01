@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.SearchActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toobar"
+        app:title="Molla"
+        android:background="#86C6C6C6"
+        app:titleTextColor="#228FFD"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+        <FrameLayout
+            android:id="@+id/framemyusser"
+            android:layout_gravity="right"
+            android:layout_width="55dp"
+            android:layout_height="?attr/actionBarSize">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/baseline_account_circle_24"></ImageView>
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/framegiohang"
+            android:layout_gravity="right"
+            android:layout_width="55dp"
+            android:layout_height="?attr/actionBarSize">
+            <com.nex3z.notificationbadge.NotificationBadge
+                android:id="@+id/menu_sl"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_gravity="top|right"
+                />
+
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/ic_cart_24"
+                android:layout_width="30dp"
+                android:layout_height="30dp"></ImageView>
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/framewwishlist"
+            android:layout_marginRight="3dp"
+            android:layout_gravity="right"
+            android:layout_width="55dp"
+            android:layout_height="?attr/actionBarSize">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+
+                android:layout_gravity="center"
+                android:src="@drawable/ic_search"></ImageView>
+        </FrameLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/edtsearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/abhaya_libre"
+        android:hint="Nhập sản phẩm cần tìm..."
+        app:layout_constraintTop_toBottomOf="@id/toobar"
+        tools:layout_editor_absoluteX="10dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleview_search"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtsearch"
+        app:layout_constraintVertical_bias="0.2"
+        tools:layout_editor_absoluteX="10dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,38 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="10dp"
     tools:context=".activity.DangNhapActivity">
+
     <TextView
         android:id="@+id/txtdangnhap"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="Sign in"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="#228FFD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/abhaya_libre"
         android:gravity="center"
-        android:padding="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <com.google.android.material.textfield.TextInputLayout
-        app:layout_constraintTop_toBottomOf="@+id/txtdangnhap"
-        android:layout_marginTop="5dp"
-        android:id="@+id/line1"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <com.google.android.material.textfield.TextInputEditText
-            android:hint="Username"
-            android:id="@+id/username"
-            android:inputType="text"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:drawableLeft="@drawable/ic_user24"
-            android:drawablePadding="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+        android:text="Sign in"
+        android:textColor="#228FFD"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="10dp" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+            app:layout_constraintTop_toBottomOf="@+id/txtdangnhap"
+            android:layout_marginTop="30dp"
+            android:id="@+id/line1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:drawableLeft="@drawable/ic_user24"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/abhaya_libre"
+            android:hint="Username"
+            android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -45,70 +51,79 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <com.google.android.material.textfield.TextInputEditText
-            android:hint="Password"
             android:id="@+id/password"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:inputType="textPassword"
-            android:drawableLeft="@drawable/ic_vpn_key_24"
-            android:drawablePadding="5dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:drawableLeft="@drawable/ic_vpn_key_24"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/abhaya_libre"
+            android:hint="Password"
+            android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btndangnhap"
-        android:background="#228FFD"
-        app:layout_constraintTop_toBottomOf="@+id/line2"
-        android:layout_marginRight="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="10dp"
-        android:text="SIGN IN"
-        android:textSize="22sp"
-        android:textColor="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="#228FFD"
+        android:fontFamily="@font/abhaya_libre"
+        android:text="SIGN IN"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line2"
+        app:layout_constraintVertical_bias="0.809"
+        tools:layout_editor_absoluteX="10dp" />
+
     <LinearLayout
         android:id="@+id/layout6"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_margin="10dp"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/btndangnhap"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <TextView
-            android:textSize="15sp"
-            android:text="If you do not already have an account?"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_marginLeft="12dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/abhaya_libre"
+            android:text="If you do not already have an account?"
+            android:textSize="15sp">
 
         </TextView>
+
         <TextView
             android:id="@+id/txtdangki"
-            android:layout_marginLeft="10dp"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:text="Sign up here!"
-            android:textColor="@android:color/holo_red_light"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/abhaya_libre"
+            android:paddingLeft="10sp"
+            android:text="Sign up here!"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:textStyle="bold">
 
         </TextView>
 
     </LinearLayout>
+
     <TextView
         android:id="@+id/txtresetpass"
-        app:layout_constraintTop_toBottomOf="@+id/layout6"
-        android:layout_marginTop="15dp"
-        android:textColor="#228FFD"
-        android:textSize="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/abhaya_libre"
         android:gravity="center"
         android:text="Quên mất khẩu?"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:textColor="#228FFD"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@+id/layout6">
 
     </TextView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,8 +5,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 
@@ -18,6 +20,7 @@ import com.example.meta.model.SanPhamMoiModel;
 import com.example.meta.retrofit.ApiBanHang;
 import com.example.meta.retrofit.RetrofitClient;
 import com.example.meta.utils.Utils;
+import com.nex3z.notificationbadge.NotificationBadge;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,8 +39,9 @@ public class DienThoaiActivity extends AppCompatActivity {
     DienThoaiAdapter adapterDT;
     List<SanPhamMoi> sanPhamMoiList;
     LinearLayoutManager linearLayoutManager;
+    FrameLayout frameLayout,framewishlist,framemyuser;
     boolean isLoading = false;
-
+    NotificationBadge badge;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,6 +93,42 @@ public class DienThoaiActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         sanPhamMoiList = new ArrayList<>();
+        badge = findViewById(R.id.menu_sl);
+        frameLayout = findViewById(R.id.framegiohang);
+        framewishlist = findViewById(R.id.framewwishlist);
+        framemyuser = findViewById(R.id.framemyusser);
+
+        frameLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent giohang = new Intent(getApplicationContext(),GioHangActivity.class);
+                startActivity(giohang);
+            }
+        });
+        framewishlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent wishlist = new Intent(getApplicationContext(),WishlistActivity.class);
+                startActivity(wishlist);
+            }
+        });
+        framemyuser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myuser = new Intent(getApplicationContext(),PresonalActivity.class);
+                startActivity(myuser);
+            }
+        });
+
+        if (Utils.manggiohang != null){
+            int tatolItem = 0;
+            for (int i = 0; i < Utils.manggiohang.size() ; i++){
+                tatolItem = tatolItem + Utils.manggiohang.get(i).getSoLuong();
+
+            }
+
+            badge.setText(String.valueOf(tatolItem));
+        }
     }
 
     @Override

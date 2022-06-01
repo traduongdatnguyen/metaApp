@@ -4,5 +4,8 @@
     <string name="add_to_cart">ADD TO CART</string>
     <string name="_200">gia</string>
     <string name="_300">$300</string>
-
+    <string name="action_hone">Home</string>
+    <string name="action_wishlist">Wishlist</string>
+    <string name="action_myuser">My</string>
+    <string name="action_cart">Cart</string>
 </resources>

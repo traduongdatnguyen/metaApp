@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
     tools:context=".activity.ChiTietActivity">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toobar"
@@ -15,130 +14,206 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
-      <FrameLayout
-          android:id="@+id/framegiohang"
-          android:layout_marginRight="10dp"
-          android:layout_gravity="right"
-          android:layout_width="55dp"
-          android:layout_height="?attr/actionBarSize">
-          <com.nex3z.notificationbadge.NotificationBadge
-              android:id="@+id/menu_sl"
-              android:layout_gravity="top|right"
-              android:layout_width="28dp"
-              android:layout_height="25dp"/>
-          <ImageView
-              android:layout_marginTop="15dp"
-              android:src="@drawable/ic_cart_24"
-              android:layout_width="35dp"
-              android:layout_height="35dp"></ImageView>
-      </FrameLayout>
-    </androidx.appcompat.widget.Toolbar>
-    <LinearLayout
-        android:id="@+id/layout1"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/toobar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        <FrameLayout
+            android:id="@+id/framemyusser"
+            android:layout_gravity="right"
+            android:layout_width="55dp"
+            android:layout_height="?attr/actionBarSize">
 
-        <ImageView
-            android:id="@+id/imgchitiet"
-            android:layout_width="150dp"
-            android:layout_height="match_parent" />
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <TextView
-                android:id="@+id/txttensp"
-                android:textSize="15sp"
-                android:fontFamily="@font/manrope_bold"
-                android:gravity="center"
-                android:textColor="#505050"
-                android:text="Tên Sản Phẩm"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            </TextView>
-
-            <TextView
-                android:id="@+id/txtgiasp"
-                android:layout_width="121dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
-                android:text="@string/_200"
-                android:textColor="@android:color/holo_red_light"
-                android:textSize="13sp"
-                android:fontFamily="@font/manrope_regular">
-
-            </TextView>
-
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_margin="10dp"
-                android:layout_marginStart="15dp"
-                android:background="@drawable/spinner"
-                android:gravity="center" />
+                android:layout_gravity="center"
+                android:src="@drawable/baseline_account_circle_24"></ImageView>
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/framegiohang"
+            android:layout_gravity="right"
+            android:layout_width="55dp"
+            android:layout_height="?attr/actionBarSize">
+            <com.nex3z.notificationbadge.NotificationBadge
+                android:id="@+id/menu_sl"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_gravity="top|right"
+                />
 
-            <Button
-                android:id="@+id/btnthemvaogiohang"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginEnd="20dp"
-                android:backgroundTint="#228FFD"
-                android:fontFamily="@font/manrope_regular"
-                android:text="@string/add_to_cart"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-    </LinearLayout>
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/ic_cart_24"
+                android:layout_width="30dp"
+                android:layout_height="30dp"></ImageView>
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/framewwishlist"
+            android:layout_marginRight="3dp"
+            android:layout_gravity="right"
+            android:layout_width="55dp"
+            android:layout_height="?attr/actionBarSize">
 
-    <LinearLayout
-        android:id="@+id/layout2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="10dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout1"
-        app:layout_constraintVertical_bias="0.2"
-        tools:layout_editor_absoluteX="10dp">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
 
-        <TextView
+                android:layout_gravity="center"
+                android:src="@drawable/ic_love"></ImageView>
+        </FrameLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/layout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:fontFamily="@font/manrope_bold"
-            android:text="Product Information"
-            android:textColor="#505050"
-            android:textSize="15sp"></TextView>
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/toobar">
 
-        <ScrollView
+            <ImageView
+                android:id="@+id/imgchitiet"
+                android:layout_width="150dp"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txttensp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/abhaya_libre"
+                    android:gravity="center"
+                    android:text="Tên Sản Phẩm"
+                    android:textColor="@color/texttile"
+                    android:textSize="15sp"></TextView>
+
+                <TextView
+                    android:id="@+id/txtgiasp"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/abhaya_libre"
+                    android:text="@string/_200"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="13sp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginStart="15dp"
+                    android:background="@drawable/spinner"
+                    android:gravity="center" />
+
+                <Button
+                    android:id="@+id/btnthemvaogiohang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:backgroundTint="#228FFD"
+                    android:fontFamily="@font/abhaya_libre"
+                    android:text="@string/add_to_cart"
+                    android:textColor="@android:color/white"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/btnlove"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="-8dp"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="#228FFD"
+                    android:fontFamily="@font/abhaya_libre"
+                    android:text="❤ add to Wishlist"
+                    android:textColor="@android:color/white"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="300dp"
+        app:layout_constraintBottom_toBottomOf="@+id/layout1"
+        >
+
+        <LinearLayout
+            android:id="@+id/layout2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/layout1"
+            app:layout_constraintVertical_bias="1.0"
+            tools:layout_editor_absoluteX="37dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/abhaya_libre"
+                android:text="Product Information"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/texttile"
+                android:textSize="17sp"></TextView>
+
 
             <TextView
                 android:id="@+id/txtmotachitiet"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:fontFamily="@font/manrope_regular"
-                android:textColor="#505050"
+                android:fontFamily="@font/abhaya_libre"
+                android:textColor="@color/texttile"
                 android:textSize="14sp">
 
             </TextView>
 
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        </ScrollView>
+                <ImageView
+                    android:id="@+id/cthinhanh2"
+                    android:layout_width="185dp"
+                    android:layout_height="150dp" />
 
-        <ImageView
-            android:id="@+id/cthinhanh1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+                <ImageView
+                    android:id="@+id/cthinhanh3"
+                    android:layout_width="185dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="right" />
 
 
+            </FrameLayout>
+            <TextView
+                android:id="@+id/skas"
+                android:text="Sản phẩm tương tự"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:fontFamily="@font/abhaya_libre"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:textColor="@color/texttile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="10dp"
+                android:id="@+id/listtuongduong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

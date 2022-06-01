@@ -7,6 +7,7 @@
     android:layout_margin="10dp"
     android:layout_height="wrap_content">
     <FrameLayout
+        android:background="@drawable/background_btn"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <ImageView
@@ -23,25 +24,26 @@
             <ImageView
                 android:id="@+id/itemsp_image"
                 android:layout_width="match_parent"
-                android:layout_height="58dp"
+                android:layout_height="75dp"
+                android:paddingBottom="2dp"
                 android:src="@drawable/ic__media_24" />
 
             <TextView
                 android:id="@+id/itemsp_ten"
                 android:fontFamily="@font/manrope_regular"
                 android:text="Laptop"
-                android:textSize="13sp"
+                android:textSize="15.5sp"
                 android:gravity="center"
                 android:paddingStart="10dp"
                 android:layout_width="match_parent"
-                android:textColor="#262627"
-                android:paddingBottom="5sp"
+                android:textColor="@color/texttile"
+                android:padding="5sp"
                 android:layout_height="wrap_content"/>
             <TextView
                 android:id="@+id/itemsp_gia"
                 android:text="$ 200"
                 android:fontFamily="@font/manrope_regular"
-                android:textSize="12sp"
+                android:textSize="13.5sp"
                 android:textColor="@android:color/holo_red_light"
                 android:gravity="center"
                 android:layout_width="match_parent"

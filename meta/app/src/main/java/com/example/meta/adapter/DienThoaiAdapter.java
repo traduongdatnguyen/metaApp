@@ -17,6 +17,7 @@ import com.example.meta.Interface.ItemClickListener;
 import com.example.meta.R;
 import com.example.meta.activity.ChiTietActivity;
 import com.example.meta.model.SanPhamMoi;
+import com.example.meta.utils.Utils;
 
 import java.util.List;
 
@@ -53,7 +54,7 @@ public class DienThoaiAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             SanPhamMoi sanPham = array.get(position);
             myViewHolder.TenSP.setText(sanPham.getTenSP().trim());
             myViewHolder.DonGia.setText("$ "+sanPham.getDonGia());
-            Glide.with(context).load(sanPham.getHinhAnh1()).into(myViewHolder.HinhAnh1);
+            Glide.with(context).load(Utils.URL_IMAGE + sanPham.getHinhAnh1()).into(myViewHolder.HinhAnh1);
             myViewHolder.MoTa.setText("Operating system:"+ sanPham.getCPU()+ "\n Ram"+ sanPham.getRam());
             myViewHolder.setItemClickListener(new ItemClickListener() {
                 @Override

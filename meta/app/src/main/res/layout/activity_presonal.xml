@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.PresonalActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="130dp"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/top_background" />
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/profile"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView9"
+
+                  />
+
+                <TextView
+                    android:id="@+id/userFullName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/abhaya_libre"
+                    android:text="Trà Dương Đạt Nguyên"
+                    android:textSize="22sp"
+                    android:textColor="@color/texttile"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView10"
+                    app:layout_constraintStart_toStartOf="@+id/imageView10"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+
+                <TextView
+                    android:id="@+id/userGmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/abhaya_libre"
+                    android:text="traduongdatnguyen@gmail.com"
+                    android:textSize="20dp"
+                    android:textColor="@color/texttile"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/userFullName" />
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/userGmail">
+
+                    <Button
+                        android:id="@+id/btneditaccount"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
+                        android:backgroundTint="#00F4F4F4"
+                        android:drawableEnd="@drawable/ic_1"
+                        android:elevation="3dp"
+                        android:fontFamily="@font/abhaya_libre"
+                        android:paddingStart="20dp"
+                        android:text="Account Settings "
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/texttile" />
+
+                    <Button
+                        android:id="@+id/btnmypurchase"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
+                        android:backgroundTint="#2DF4F4F4"
+                        android:drawableEnd="@drawable/ic_2"
+                        android:elevation="3dp"
+                        android:fontFamily="@font/abhaya_libre"
+                        android:paddingStart="20dp"
+                        android:text="My Purchase "
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/texttile" />
+
+                    <Button
+                        android:id="@+id/btnaccount"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
+                        android:backgroundTint="#2DF4F4F4"
+                        android:drawableEnd="@drawable/ic_3"
+                        android:elevation="3dp"
+                        android:fontFamily="@font/abhaya_libre"
+                        android:paddingStart="20dp"
+                        android:text="Personal Information"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/texttile" />
+
+                    <Button
+                        android:id="@+id/btnthongbao"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
+                        android:backgroundTint="#2DF4F4F4"
+                        android:drawableEnd="@drawable/ic_4"
+                        android:elevation="3dp"
+                        android:fontFamily="@font/abhaya_libre"
+                        android:paddingStart="20dp"
+                        android:text="Notification"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/texttile" />
+
+                    <Button
+                        android:id="@+id/btnshoppincart"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
+                        android:backgroundTint="#2DF4F4F4"
+                        android:drawableEnd="@drawable/ic_cart5"
+                        android:elevation="3dp"
+                        android:fontFamily="@font/abhaya_libre"
+                        android:paddingStart="20dp"
+                        android:text="Shopping Cart "
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/texttile" />
+
+                    <Button
+                        android:id="@+id/nutyeuthich"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
+                        android:backgroundTint="#2DF4F4F4"
+                        android:drawableEnd="@drawable/baseline_favorite_24"
+                        android:elevation="3dp"
+                        android:fontFamily="@font/abhaya_libre"
+                        android:paddingStart="20dp"
+                        android:text="Wishlist "
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/texttile"/>
+
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

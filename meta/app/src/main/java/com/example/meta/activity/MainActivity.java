@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
@@ -26,6 +27,7 @@ import android.widget.ViewFlipper;
 
 import com.bumptech.glide.Glide;
 import com.example.meta.R;
+import com.example.meta.adapter.DienThoaiMoiNhatAdapter;
 import com.example.meta.adapter.LoaiSpAdapter;
 import com.example.meta.adapter.SanPhamMoiAdapter;
 import com.example.meta.model.LoaiSp;
@@ -48,7 +50,7 @@ import retrofit2.Retrofit;
 public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     ViewFlipper viewFlipper;
-    RecyclerView recyclerViewManHinhChinh;
+    RecyclerView recyclerViewManHinhChinh,recycleview2;
     NavigationView navigationView;
     ListView listviewmanhinhchinh;
     DrawerLayout drawerLayout;
@@ -57,9 +59,10 @@ public class MainActivity extends AppCompatActivity {
     CompositeDisposable compositeDisposable = new CompositeDisposable();
     ApiBanHang apiBanHang;
     List<SanPhamMoi> listSPMoi;
+    DienThoaiMoiNhatAdapter dienThoaiMNAdapterAdapter;
     SanPhamMoiAdapter spAdapter;
     NotificationBadge badge;
-    FrameLayout frameLayout;
+    FrameLayout frameLayout,framewishlist,framemyuser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,11 +71,12 @@ public class MainActivity extends AppCompatActivity {
         apiBanHang = RetrofitClient.getInstance(Utils.BASE_URL).create(ApiBanHang.class);
         Anhxa();
         ActionBar();
-//        ActionViewFlipper();
+
         if (isConnected(this)) {
             ActionViewFlipper();
             getLoaiSanPham();
             getSpMoi();
+            getdienthoai();
             getEventClick();
         } else {
             Toast.makeText(getApplicationContext(), "Không có internet", Toast.LENGTH_LONG).show();
@@ -109,7 +113,48 @@ public class MainActivity extends AppCompatActivity {
                             smartWatches.putExtra("title", "Smart Watches");
                            startActivity(smartWatches);
                            break;
-                        default:
+                       case 4:
+                           Intent DigtalCameras = new Intent(getApplicationContext(),DienThoaiActivity.class);
+                           DigtalCameras.putExtra("MaDM",5);
+                           DigtalCameras.putExtra("title", "Digtal Cameras");
+                           startActivity(DigtalCameras);
+                           break;
+                       case 5:
+                           Intent Televisions = new Intent(getApplicationContext(),DienThoaiActivity.class);
+                           Televisions.putExtra("MaDM",6);
+                           Televisions.putExtra("title", "Televisions");
+                           startActivity(Televisions);
+                           break;
+                       case 6:
+                           Intent Audio = new Intent(getApplicationContext(),DienThoaiActivity.class);
+                           Audio.putExtra("MaDM",7);
+                           Audio.putExtra("title", "Audio");
+                           startActivity(Audio);
+                           break;
+                       case 7:
+                           Intent Accessoris = new Intent(getApplicationContext(),DienThoaiActivity.class);
+                           Accessoris.putExtra("MaDM",8);
+                           Accessoris.putExtra("title", "Accessoris");
+                           startActivity(Accessoris);
+                           break;
+                       case 8:
+                           Intent PcPrinter = new Intent(getApplicationContext(),DienThoaiActivity.class);
+                           PcPrinter.putExtra("MaDM",9);
+                           PcPrinter.putExtra("title", "Pc, Printer");
+                           startActivity(PcPrinter);
+                           break;
+                       case 9:
+                           Intent Waterheater = new Intent(getApplicationContext(),DienThoaiActivity.class);
+                           Waterheater.putExtra("MaDM",10);
+                           Waterheater.putExtra("title", "Water heater");
+                           startActivity(Waterheater);
+                           break;
+                       case 10:
+                           Intent wishList = new Intent(getApplicationContext(),WishlistActivity.class);
+                           startActivity(wishList);
+                           break;
+
+                       default:
                             Intent trangchu2 = new Intent(getApplicationContext(),MainActivity.class);
                             startActivity(trangchu2);
                             break;
@@ -131,7 +176,24 @@ public class MainActivity extends AppCompatActivity {
                                 recyclerViewManHinhChinh.setAdapter(spAdapter);
                             }
                         },throwable -> {
-                            Toast.makeText(getApplicationContext(),"Không kết nối được với sever"+throwable.getMessage(),Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),"Không hiển thị được sản phẩm gọi ý!"+throwable.getMessage(),Toast.LENGTH_LONG).show();
+                        }
+                )
+        );
+    }
+    private void getdienthoai() {
+        compositeDisposable.add(apiBanHang.getDienThoaiMn()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                        sanPhamMoiModel -> {
+                            if (sanPhamMoiModel.isSuccess()){
+                                listSPMoi = sanPhamMoiModel.getResult();
+                                dienThoaiMNAdapterAdapter = new DienThoaiMoiNhatAdapter(getApplicationContext(),listSPMoi);
+                                recycleview2.setAdapter(dienThoaiMNAdapterAdapter);
+                            }
+                        },throwable -> {
+                            Toast.makeText(getApplicationContext(),"Không hiển thị được điện thoại mới nhất!"+throwable.getMessage(),Toast.LENGTH_LONG).show();
                         }
                 )
         );
@@ -194,15 +256,24 @@ public class MainActivity extends AppCompatActivity {
     private void Anhxa() {
         toolbar = findViewById(R.id.toobarmanhinhchinh);
         viewFlipper = findViewById(R.id.viewlipper);
-        recyclerViewManHinhChinh = findViewById(R.id.recycleview);
+
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this,2);
+        recyclerViewManHinhChinh = findViewById(R.id.recycleview);
         recyclerViewManHinhChinh.setLayoutManager(layoutManager);
         recyclerViewManHinhChinh.setHasFixedSize(true);
+
+        recycleview2 = findViewById(R.id.recycleview2);
+//        recycleview2.setLayoutManager(layoutManager);
+//         recycleview2.setHasFixedSize(true);
+//        //
+
         listviewmanhinhchinh = findViewById(R.id.listviewmanhinhchinh);
         navigationView = findViewById(R.id.navigationview);
         drawerLayout = findViewById(R.id.drawerlayout);
         badge = findViewById(R.id.menu_sl);
         frameLayout = findViewById(R.id.framegiohang);
+        framewishlist = findViewById(R.id.framewwishlist);
+        framemyuser = findViewById(R.id.framemyusser);
         //khoi tao list
         mangloaisp = new ArrayList<>();
         listSPMoi = new ArrayList<>();
@@ -223,7 +294,20 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(giohang);
             }
         });
-
+        framewishlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent wishlist = new Intent(getApplicationContext(),SearchActivity.class);
+                startActivity(wishlist);
+            }
+        });
+        framemyuser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myuser = new Intent(getApplicationContext(),PresonalActivity.class);
+                startActivity(myuser);
+            }
+        });
     }
 
     @Override

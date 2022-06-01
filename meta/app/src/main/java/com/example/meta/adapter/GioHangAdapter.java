@@ -47,7 +47,7 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.MyViewHo
         GioHang gioHang = gioHangList.get(position);
         holder.item_giohang_tensp.setText(gioHang.getTenSP());
         holder.item_giohang_soluong.setText(gioHang.getSoLuong() + " ");
-        Glide.with(context).load(gioHang.getHinhAnh()).into(holder.item_giohang_image);
+        Glide.with(context).load(Utils.URL_IMAGE + gioHang.getHinhAnh()).into(holder.item_giohang_image);
         holder.item_giohang_gia.setText("$ "+ gioHang.getDonGia());
         long gia = gioHang.getSoLuong() * gioHang.getDonGia();
         holder.item_giohang_giasp2.setText("$ "+gia+"");
@@ -59,7 +59,6 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.MyViewHo
                    if(gioHangList.get(pos).getSoLuong() > 1){
                        int soluongmoi = gioHangList.get(pos).getSoLuong()-1;
                        gioHangList.get(pos).setSoLuong(soluongmoi);
-
                        holder.item_giohang_soluong.setText(gioHangList.get(pos).getSoLuong() + " ");
                        long gia = gioHangList.get(pos).getSoLuong() * gioHangList.get(pos).getDonGia();
                        holder.item_giohang_giasp2.setText("$ "+gia+"");

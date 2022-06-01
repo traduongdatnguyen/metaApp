@@ -7,6 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <LinearLayout
+        android:background="@drawable/background_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -17,16 +18,21 @@
             android:layout_height="100dp"/>
         <LinearLayout
             android:orientation="vertical"
+
+            android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginLeft="10dp"
                 android:id="@+id/item_giohang_tensp"
-                android:text="Tên sản phẩm"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/manrope_bold"
+                android:text="Tên sản phẩm"
+                android:textColor="#505050"
+                android:textSize="15sp" />
+
             <LinearLayout
                 android:layout_marginTop="10dp"
                 android:weightSum="18"
@@ -36,35 +42,43 @@
                 <TextView
                     android:id="@+id/item_giohang_gia"
                     android:text="$100"
-                    android:textSize="15sp"
+                    android:textSize="13sp"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/manrope_bold"
                     android:layout_weight="5"
-                    android:textColor="@android:color/holo_red_light"
+                    android:textColor="@color/texttile"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content">
                 </TextView>
                 <ImageView
                     android:src="@drawable/ic_remove_24"
                     android:id="@+id/item_giohang_tru"
-                    android:layout_weight="2"
+                    android:layout_weight="1.2"
+                    android:layout_gravity="center"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:id="@+id/item_giohang_soluong"
                     android:text="1"
+                    android:layout_gravity="center"
                     android:gravity="center"
                     android:layout_weight="2"
-                    android:textStyle="bold"
-                    android:textSize="15sp"
+                    android:textColor="@color/texttile"
+                    android:fontFamily="@font/manrope_regular"
+                    android:textSize="13sp"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
                 <ImageView
                     android:src="@drawable/ic_baseline_add_24"
-                    android:layout_weight="2"
+                    android:layout_weight="1.2"
+                    android:layout_gravity="center"
                     android:id="@+id/item_giohang_cong"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
                 <ImageView
-                    android:layout_weight="2"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.2"
+                    android:layout_gravity="center"
                     android:src="@drawable/ic_baseline_drag_handle_24"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
@@ -72,8 +86,10 @@
                     android:id="@+id/item_giohang_giasp2"
                     android:text="@string/_300"
                     android:layout_weight="5"
-                    android:textStyle="bold"
-                    android:textSize="15sp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:fontFamily="@font/manrope_bold"
+                    android:textSize="13sp"
                     android:textColor="@android:color/holo_red_light"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>

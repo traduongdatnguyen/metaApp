@@ -13,11 +13,11 @@ public class SanPhamMoi implements Serializable {
     String MoTa;
     String ThoiGian;
     String LoaiMau1, LoaiMau2, LoaiMau3, LoaiMau4, LoaiMau5;
-//192.168.1.4   192.168.100.24
-    String tamp="http://192.168.1.4:8080/meta/public/assets/images/products/";
-    String HinhAnh,TenSanPham;
 
+    String TenSanPham;
+    String TinhTrangDH;
 
+//videonguyen
     public int getMaSP() {
         return MaSP;
     }
@@ -67,8 +67,7 @@ public class SanPhamMoi implements Serializable {
     }
 
     public String getHinhAnh1() {
-        HinhAnh = tamp+HinhAnh1;
-        return HinhAnh;
+        return HinhAnh1;
     }
     public void setHinhAnh1(String hinhAnh1) {
         HinhAnh1 = hinhAnh1;
@@ -264,9 +263,13 @@ public class SanPhamMoi implements Serializable {
         LoaiMau5 = loaiMau5;
     }
 
+    public String getTinhTrangDH() {
+        return TinhTrangDH;
+    }
 
-
-
+    public void setTinhTrangDH(String tinhTrangDH) {
+        TinhTrangDH = tinhTrangDH;
+    }
 }
 
 

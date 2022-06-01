@@ -14,6 +14,30 @@
         android:theme="@style/Theme.Meta"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activity.EditHoSoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.EditPassUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AccountUesrActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.PresonalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.OrderCompleteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SuccessCheckoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.WishlistActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.ThanhToanActivity"
             android:exported="false" />
         <activity
@@ -43,6 +67,10 @@
         <activity
             android:name=".activity.MainActivity"
             android:exported="true" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

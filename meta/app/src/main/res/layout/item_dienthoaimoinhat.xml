@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="8dp"
+    app:cardCornerRadius="4dp"
+    android:layout_width="160dp"
+    android:layout_margin="10dp"
+    android:layout_height="wrap_content">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/background_btn"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_gravity="top|right"
+            android:layout_width="25dp"
+            android:layout_height="25dp">
+        </ImageView>
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/itemsp_image"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:paddingBottom="2dp"
+                android:src="@drawable/ic__media_24" />
+
+            <TextView
+                android:id="@+id/itemsp_ten"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abhaya_libre"
+                android:gravity="center"
+                android:padding="5sp"
+                android:paddingStart="10dp"
+                android:text="Laptop"
+                android:textColor="@color/texttile"
+                android:textSize="15.5sp" />
+
+            <TextView
+                android:id="@+id/itemsp_gia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abhaya_libre"
+                android:gravity="center"
+                android:text="$ 200"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="13.5sp" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+</androidx.cardview.widget.CardView>

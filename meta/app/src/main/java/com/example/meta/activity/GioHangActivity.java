@@ -30,6 +30,7 @@ public class GioHangActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     Button btnmuahang;
     GioHangAdapter adapter;
+    long tongtiensp;
 
 
     @Override
@@ -42,7 +43,7 @@ public class GioHangActivity extends AppCompatActivity {
     }
 
     private void tinhTongTien() {
-        long tongtiensp = 0;
+        tongtiensp = 0;
         for(int i = 0; i < Utils.manggiohang.size(); i++){
             tongtiensp = tongtiensp + (Utils.manggiohang.get(i).getDonGia() * Utils.manggiohang.get(i).getSoLuong());
         }
@@ -69,13 +70,16 @@ public class GioHangActivity extends AppCompatActivity {
             recyclerView.setAdapter(adapter);
         }
 
-        btnmuahang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ThanhToanActivity.class);
-                startActivity(intent);
-            }
-        });
+        if(Utils.manggiohang.size() > 0){
+            btnmuahang.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getApplicationContext(), ThanhToanActivity.class);
+                    intent.putExtra("tongtien",tongtiensp);
+                    startActivity(intent);
+                }
+            });
+        }
 
     }
 
@@ -84,7 +88,10 @@ public class GioHangActivity extends AppCompatActivity {
         tongtien = findViewById(R.id.txttongtien);
         toolbar = findViewById(R.id.toobar);
         recyclerView = findViewById(R.id.recycleviewgiohang);
-        btnmuahang = findViewById(R.id.btnmuahang);
+        if(Utils.manggiohang.size() > 0){
+            btnmuahang = findViewById(R.id.btnmuahang);
+        }
+
     }
 
     @Override

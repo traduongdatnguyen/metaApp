@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/acction_home"
+        android:icon="@drawable/baseline_home_24"
+        android:title="@string/action_hone"
+        />
+    <item android:id="@+id/acction_wishlist"
+        android:icon="@drawable/ic_cart_24"
+        android:title="@string/action_cart"
+        />
+    <item android:id="@+id/acction_myuser"
+        android:icon="@drawable/baseline_account_circle_24"
+        android:title="@string/action_hone"
+        />
+</menu>

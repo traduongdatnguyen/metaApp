@@ -5,7 +5,7 @@ import java.util.List;
 public class SanPhamMoiModel {
     boolean success;
     String message;
-
+    List<SanPhamMoi> result;
     public boolean isSuccess() {
         return success;
     }
@@ -26,9 +26,9 @@ public class SanPhamMoiModel {
         return result;
     }
 
-    public void setResult(List<SanPhamMoi> result) {
+    public void setResult() {
         this.result = result;
     }
 
-    List<SanPhamMoi> result;
+
 }
